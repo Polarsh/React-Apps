@@ -1,6 +1,14 @@
 import React from "react";
 
-export default function Hero() {
+import { useNavigate } from "react-router-dom";
+
+export default function LoginScreen() {
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/dashboard`; 
+    navigate(path);
+  }
+
   const handleSubmit = (event) => {
     const email = event.target.email.value;
     const password = event.target.password.value;
@@ -9,6 +17,8 @@ export default function Hero() {
     console.log("email 👉️", email);
     console.log("password 👉️", password);
     console.log("tenant 👉️", tenant);
+
+    routeChange();
 
   };
 
